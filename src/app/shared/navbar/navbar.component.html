@@ -1,0 +1,26 @@
+<div class="container">
+
+  <mat-toolbar class="toolbar">
+      <button mat-icon-button (click)="nav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="lg-bra"><img src="/assets/images/logo-mobile.svg" alt=""/></span>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #nav mode='side'>
+      <mat-nav-list>
+        <a mat-list-item href="/assuntos">Assuntos</a>
+        <a mat-list-item href="/mensagens">Mensagens</a>
+        <a mat-list-item href="/expediente">Expediente</a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
+
+</div>
+
