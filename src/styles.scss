@@ -29,7 +29,7 @@ $angular-material-study-theme: mat-light-theme($angular-material-study-primary, 
 /* You can add global styles to this file, and also import other style files */
 
 $angular-material-v1-primary: mat-palette($mat-red, A200, 400, 800);
-$angular-material-v1-accent: mat-palette($mat-purple, 800, 900, 500);
+$angular-material-v1-accent: mat-palette($mat-blue-grey, 800, 900, 500);
 $angular-material-v1-warn: mat-palette($mat-red, 900, 500, A700);
 
 $angular-material-v1-theme: mat-light-theme(
@@ -70,4 +70,43 @@ $custom-typography: mat-typography-config(
   width: 100%;
   margin-top: 10px;
   text-align: right;
+}
+
+.mat-column-texto {
+  flex: 0 0 80% !important;
+  min-width: 104px !important;
+}
+.mat-column-editar {
+  flex: 0 0 5% !important;
+  min-width: 104px !important;
+}
+.mat-column-excluir {
+  flex: 0 0 5% !important;
+  min-width: 104px !important;
+}
+
+.mat-header-cell {
+  font-size: 16px;
+}
+
+.tab-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}
+
+.pesquisar {
+  min-height: 64px;
+  padding: 8px 24px 0;
+  max-width: 300px;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 500px;
 }

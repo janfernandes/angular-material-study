@@ -1,3 +1,41 @@
 <div class="wrapper">
-  <h2>Cadastrar Assunto</h2>
+
+  <form #assuntoCadastroForm="ngForm" autocomplete="off" (ngSubmit)="salvar(assuntoCadastroForm)">
+    <div class="title">
+      <h1 class="mat-display-1">Cadastrar Assunto</h1>
+    </div>
+
+    <p>Segmento</p>
+
+    <mat-form-field appearance="fill" color="accent">
+      <mat-select [formControl]="assuntoSegmento" placeholder="Selecione" value="Selecione" name="segmento"
+                  [(ngModel)]="assunto.segmento" valid required>
+        <mat-option value="prime">Prime</mat-option>
+        <mat-option value="exclusive">Exclusive</mat-option>
+        <mat-option value="classic">Classic</mat-option>
+        <mat-option value="digital">Digital</mat-option>
+      </mat-select>
+      <mat-error error="required">Selecione o segmento</mat-error>
+    </mat-form-field>
+
+    <p>Texto</p>
+
+    <mat-form-field class="example-form-field" style="width:400px !important" color="accent">
+      <label>
+        <input valid required minlength="3" matInput #texto name="texto" [(ngModel)]="assunto.texto" maxlength="50" placeholder="Digite o novo assunto...">
+      </label>
+      <mat-hint align="end">{{texto.value.length}} / 50</mat-hint>
+      <mat-error error="required">Informe o assunto</mat-error>
+      <mat-error error="minlength">Mínimo de 3 caracteres</mat-error>
+    </mat-form-field>
+
+    <section class="customFlexContainer">
+      <div class="button-row">
+        <a color="primary" mat-raised-button routerLink="/assuntos">
+          Voltar
+        </a>
+        <button mat-raised-button color="primary" [disabled]="assuntoCadastroForm.invalid">Salvar</button>
+      </div>
+    </section>
+  </form>
 </div>
