@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, NgForm, Validators} from '@angular/forms';
-import {Assunto} from '../../../model/model';
+import {Assunto, Segmento} from '../../../model/model';
 
 // /** Error when invalid control is dirty, touched, or submitted. */
 // export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -18,6 +18,13 @@ import {Assunto} from '../../../model/model';
 export class AssuntosCadastroComponent implements OnInit {
 
   assunto = new Assunto();
+
+  segmentos: Segmento[] = [
+    {id: '1', nome: 'Prime'},
+    {id: '2', nome: 'Exclusive'},
+    {id: '3', nome: 'Classic'},
+    {id: '4', nome: 'Digital'}
+  ];
 
   constructor() { }
   assuntoSegmento = new FormControl('valid', [

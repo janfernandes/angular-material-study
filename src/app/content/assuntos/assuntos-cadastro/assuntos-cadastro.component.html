@@ -7,13 +7,12 @@
 
     <p>Segmento</p>
 
-    <mat-form-field appearance="fill" color="accent">
+    <mat-form-field appearance="fill">
       <mat-select [formControl]="assuntoSegmento" placeholder="Selecione" value="Selecione" name="segmento"
                   [(ngModel)]="assunto.segmento" valid required>
-        <mat-option value="prime">Prime</mat-option>
-        <mat-option value="exclusive">Exclusive</mat-option>
-        <mat-option value="classic">Classic</mat-option>
-        <mat-option value="digital">Digital</mat-option>
+        <mat-option *ngFor="let segmento of segmentos" [value]="assunto.id">
+          {{segmento.nome}}
+        </mat-option>
       </mat-select>
       <mat-error error="required">Selecione o segmento</mat-error>
     </mat-form-field>

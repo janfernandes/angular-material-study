@@ -3,3 +3,8 @@ export class Assunto {
   segmento: string;
   texto: string;
 }
+
+export class Segmento {
+  id: string;
+  nome: string;
+}
